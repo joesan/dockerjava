@@ -1,0 +1,11 @@
+# Java 7 DockerFile
+# Gets the latest ubuntu base image, installs Java on the base image, sets the Java environment variables
+FROM ubuntu
+MAINTAINER Joe San "codeintheopen@gmail.com"
+RUN apt-get update
+# Download and Install Java
+RUN add-apt-repository ppa:webupd8team/java -y && \
+	apt-get update -y && \
+	apt-get install oracle-java7-installer -y && \
+# Set JAVA_HOME
+ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
